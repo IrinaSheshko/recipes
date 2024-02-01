@@ -24,7 +24,6 @@ function App() {
    }, [wordSubmitted])
 
    const myRecipeSearch = (e) => {
-    console.log(e.target.value)
     setMySearch(e.target.value);
    }
    const finalSearch = (e) => {
@@ -49,14 +48,14 @@ function App() {
          </form>
          </div>
       <div className='container'>
-          <button>
+          <button onClick={finalSearch}>
           <img src="https://img.icons8.com/fluency-systems-filled/30/null/search-more.png" className='icons' alt="lupa"/>
          </button>
       </div>
 
       <div>
-          {myRecipes.map(element => (
-        <MyRecipesComponent 
+          {myRecipes.map((element, index) => (
+        <MyRecipesComponent key={index}
         label={element.recipe.label} 
         image={element.recipe.image} 
         calories={element.recipe.calories}

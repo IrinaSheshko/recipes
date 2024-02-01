@@ -9,8 +9,8 @@ function MyRecipesComponent({label, image, calories, ingredients}){
                 <img className="tasty" src={image} alt="recipe"/>
             </div>
             <ul className="list">
-                {ingredients.map(ingredient => (    
-                    <li className="chek">
+                {ingredients.map((ingredient, index) => (    
+                    <li className="chek" key={index}> 
                        <img src="https://img.icons8.com/color/18/null/checked-2--v1.png" 
                        className="icon" alt="chek"/>
                        {ingredient} 
